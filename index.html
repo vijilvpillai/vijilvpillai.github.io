@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vijil V Pillai – Systems Engineer, .NET and Azure</title>
+<meta name="description" content="Systems engineer with 10+ years building enterprise web applications, APIs and cloud services on .NET Core, Azure and AWS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f1f3ee; --ink:#1b2420; --muted:#566159; --line:#c9d0c5; --accent:#1f4fd8; --chip:#e4e9e0;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#121816; --ink:#e6ece6; --muted:#9aa79f; --line:#2b3631; --accent:#8aa9ff; --chip:#1c2521; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:960px;margin:0 auto;padding:0 1.25rem}
+header.top{padding:4.5rem 0 2.5rem;border-bottom:1px solid var(--line)}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+h1{font-size:clamp(2.6rem,8vw,5rem);font-weight:700;letter-spacing:-.02em}
+.tag{font-size:clamp(1.1rem,2.6vw,1.4rem);margin:1rem 0 0;max-width:34ch;color:var(--ink)}
+.meta{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:1.5rem 0 0;padding:0;list-style:none;color:var(--muted)}
+.meta a{font-weight:500}
+nav.jump{display:flex;gap:1.25rem;flex-wrap:wrap;margin-top:2rem}
+nav.jump a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--line);padding-bottom:2px}
+nav.jump a:hover{border-color:var(--accent)}
+section{padding:3rem 0;border-bottom:1px solid var(--line)}
+h2{font-size:1.9rem;font-weight:700;margin-bottom:1.5rem}
+.sum{max-width:68ch;font-size:1.1rem;margin:0}
+/* timeline: the career is a real sequence, so dates form the spine */
+.role{display:grid;grid-template-columns:9.5rem 1fr;gap:0 2rem;padding:0 0 2.5rem;position:relative}
+.role + .role{padding-top:0}
+.when{margin:.35rem 0 0;color:var(--muted);font-size:.92rem;font-variant-numeric:tabular-nums;position:relative}
+.what{border-left:2px solid var(--line);padding-left:1.75rem;position:relative}
+.what::before{content:"";position:absolute;left:-7px;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.role:first-of-type .what::before{background:var(--accent)}
+h3{font-size:1.35rem;font-weight:700}
+.where{margin:.25rem 0 .75rem;color:var(--muted)}
+.proj,.tech{margin:.5rem 0;font-size:.95rem}
+.proj span,.tech span{display:inline-block;min-width:4.2rem;font-weight:500;color:var(--muted)}
+.tech{color:var(--muted);padding:.6rem .8rem;background:var(--chip);border-radius:6px}
+.tech span{color:var(--ink)}
+.bul{margin:.75rem 0 1rem;padding-left:1.1rem}
+.bul li{margin:.3rem 0;max-width:72ch}
+dl.skills{margin:0;display:grid;gap:1rem}
+dl.skills div{display:grid;grid-template-columns:13rem 1fr;gap:.25rem 2rem}
+dt{font-weight:500}
+dd{margin:0;color:var(--muted)}
+ul.plain{margin:0;padding-left:1.1rem}
+ul.plain li{margin:.35rem 0}
+.edu strong{font-weight:500}
+footer{padding:2rem 0 4rem;color:var(--muted);font-size:.92rem}
+@media (max-width:720px){
+  header.top{padding-top:3rem}
+  .role{grid-template-columns:1fr;gap:.25rem}
+  .when{margin:0 0 .5rem 1.75rem}
+  dl.skills div{grid-template-columns:1fr}
+}
+@media print{
+  nav.jump{display:none}
+  body{background:#fff;color:#000}
+  section{break-inside:avoid-page}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>Vijil V Pillai</h1>
+    <p class="tag">Systems engineer building enterprise web apps and cloud services on .NET and Azure.</p>
+    <ul class="meta">
+      <li>Doha, Qatar</li>
+      <li>10+ years in IT development</li>
+      <li><a href="https://www.linkedin.com/in/vijil-v-pillai" rel="me noopener">LinkedIn profile</a></li>
+    </ul>
+    <nav class="jump" aria-label="Page sections">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#certifications">Certifications</a><a href="#education">Education</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <section id="about">
+    <h2>About</h2>
+    <p class="sum">Microsoft Certified systems engineer with 10+ years of experience designing, building and supporting enterprise web applications, APIs and cloud-native services on .NET Core, Azure and AWS. I work with microservices, serverless architectures, event-driven messaging and CI/CD, delivered through Agile and test-driven development. I enjoy turning business requirements into reliable software and picking up new technologies quickly.</p>
+  </section>
+  <section id="experience">
+    <h2>Experience</h2>
+<article class="role">
+  <p class="when"><time>Nov 2023</time> to <time>Present</time></p>
+  <div class="what">
+    <h3>Systems Engineer</h3>
+    <p class="where">Qatar Airways, Doha, Qatar</p>
+    <p class="proj"><span>Project</span> Facilities Management System (FMS)</p>
+    <ul class="bul"><li>Convert complex business requirements into working code and streamline the online reservation module of the FMS in close collaboration with business users.</li><li>Designed and developed the Workforce Management module using .NET Core, EF Core and Angular, covering manpower allocation, utilization, attendance, resource management, leave management and skill changes.</li><li>Implemented manpower allocation and utilization tracking to match available resources and skills to workload, and attendance and leave workflows to keep workforce records accurate.</li><li>Built REST APIs and role-based screens for supervisors and staff, integrated with existing FMS modules and secured through Keycloak.</li><li>Gathered requirements from business users, estimated effort and validated the module with them before release.</li><li>Contributed to the Landlord project, exposing FMS capabilities securely to external landlords, service providers and vendors.</li><li>Implemented Prism reports used for daily business operations.</li><li>Built a notification module with reusable templates to send email, SMS and Prism notifications to cabin crew and non-cabin crew.</li><li>Worked with cross-functional teams to resolve inventory issues in the material management module.</li></ul>
+    <p class="tech"><span>Stack</span> .NET Core, EF Core, IBM MQ, OpenShift, Ocelot, Azure DevOps, Angular, Keycloak</p>
+  </div>
+</article>
+<article class="role">
+  <p class="when"><time>Feb 2021</time> to <time>Sep 2023</time></p>
+  <div class="what">
+    <h3>Senior Technical Lead</h3>
+    <p class="where">EY GDS, Trivandrum, India</p>
+    <p class="proj"><span>Project</span> Multiple client engagements</p>
+    <ul class="bul"><li>Delivered solutions for multiple EY clients, leading development and technical design.</li><li>Implemented MSAL authentication for React and Angular applications.</li><li>Upgraded a client application from Angular 5 to Angular 14 and from .NET Core 3.1 to .NET 6.</li><li>Developed a Credential Scanner tool using Azure Batch.</li><li>Built .NET 6 Azure Functions to ingest data feeds from multiple source systems into the application database.</li><li>Developed a bulk email sender application using Power Apps and Power Automate.</li><li>Applied industry best practices and TDD, writing comprehensive unit tests.</li><li>Documented cloud architecture and delivered proofs of concept that were later adopted into production projects.</li></ul>
+    <p class="tech"><span>Stack</span> .NET Core, EF Core, Azure Functions, Key Vault, App Registrations, Storage Accounts, Azure Batch, Application Insights, App Service, Kusto, Azure DevOps, React, Angular, Power Apps, Power Automate</p>
+  </div>
+</article>
+<article class="role">
+  <p class="when"><time>Mar 2020</time> to <time>Jan 2021</time></p>
+  <div class="what">
+    <h3>Senior Software Engineer</h3>
+    <p class="where">Virtusa Consulting Services, Chennai, India</p>
+    <p class="proj"><span>Project</span> Facilities Management System, Qatar Airways</p>
+    <ul class="bul"><li>Built the material management front end in React from scratch.</li><li>Developed backend APIs for material requests, store transfers and related workflows.</li><li>Gathered requirements directly with business stakeholders and translated them into technical solutions.</li><li>Documented the new material management architecture.</li><li>Delivered RabbitMQ proofs of concept that were later implemented in the project.</li></ul>
+    <p class="tech"><span>Stack</span> .NET Core, EF Core, Dapper, Azure DevOps, React</p>
+  </div>
+</article>
+<article class="role">
+  <p class="when"><time>Jan 2019</time> to <time>Mar 2020</time></p>
+  <div class="what">
+    <h3>Software Engineer</h3>
+    <p class="where">CES IT, Chennai, India</p>
+    <p class="proj"><span>Project</span> Funnelkonnekt (Konnektive); Dev360 proof of concept</p>
+    <ul class="bul"><li>Developed Docker-based microservices on AWS ECS using .NET Core.</li><li>Built AWS Lambda functions behind API Gateway in .NET Core.</li><li>Implemented OAuth-based authentication using IdentityServer.</li><li>Set up CI/CD pipelines using AWS CodeBuild and CloudFormation.</li><li>Created a Node.js Lambda function using headless Chrome to capture screenshots of HTML pages.</li><li>Built Azure Functions for publish/subscribe messaging using Azure Service Bus with MassTransit and Azure Event Hubs.</li></ul>
+    <p class="tech"><span>Stack</span> .NET Core, EF Core, Dapper, Docker, AWS (Lambda, ECS, S3, API Gateway, CodeBuild, CloudFormation, CloudFront, IAM), Azure Functions, Azure Service Bus, Event Hubs, Node.js</p>
+  </div>
+</article>
+<article class="role">
+  <p class="when"><time>Sep 2018</time> to <time>Dec 2018</time></p>
+  <div class="what">
+    <h3>System Analyst Developer</h3>
+    <p class="where">Verizon Data Services India, Chennai, India</p>
+    <p class="proj"><span>Project</span> CRMM, Verizon US</p>
+    <ul class="bul"><li>Enhanced and maintained the customer equipment and offers module.</li><li>Developed features for the offers and promotions qualification engine.</li></ul>
+    <p class="tech"><span>Stack</span> ASP.NET Web API, AWS EC2, PostgreSQL, Scrum</p>
+  </div>
+</article>
+<article class="role">
+  <p class="when"><time>Feb 2017</time> to <time>Aug 2018</time></p>
+  <div class="what">
+    <h3>Application Development Analyst</h3>
+    <p class="where">Accenture, Chennai, India</p>
+    <p class="proj"><span>Project</span> Healthcare applications, Shire</p>
+    <ul class="bul"><li>Enhanced and maintained the Hierarchy Maintenance, Customer Data Integration and International Aggregate Spend Reporting applications.</li><li>Executed quarterly realignment migration scripts that drive medical representative commission calculations.</li><li>Resolved file upload and data issues and coordinated with ETL and Tableau teams for quick fixes.</li></ul>
+    <p class="tech"><span>Stack</span> VB.NET, SQL Server, IIS, Agile, Scrum</p>
+  </div>
+</article>
+<article class="role">
+  <p class="when"><time>Jan 2015</time> to <time>Jan 2017</time></p>
+  <div class="what">
+    <h3>Programmer Analyst</h3>
+    <p class="where">Cognizant Technology Solutions, Chennai, India</p>
+    <p class="proj"><span>Project</span> SmartView, Fiserv Inc.</p>
+    <ul class="bul"><li>Developed web application features for a financial application, covering front end and back end.</li><li>Built REST Web API services and migrated a VB.NET application to ASP.NET MVC.</li><li>Wrote stored procedures, views and functions in SQL Server.</li></ul>
+    <p class="tech"><span>Stack</span> ASP.NET MVC, ADO.NET, jQuery, Kendo UI, HTML5, SQL Server, TFS</p>
+  </div>
+</article>
+  </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <dl class="skills">
+<div><dt>Languages</dt><dd>C#, SQL, JavaScript, Node.js, HTML5, CSS</dd></div>
+<div><dt>Frameworks and libraries</dt><dd>.NET Core, ASP.NET MVC, ASP.NET Web API, Entity Framework Core, ADO.NET, Dapper, AutoMapper, FluentValidation, IdentityServer, MassTransit, Angular, React, jQuery, Kendo UI</dd></div>
+<div><dt>Cloud and infrastructure</dt><dd>Azure Functions, Service Bus, Event Hubs, Batch, Key Vault, Storage, App Service, Application Insights, Azure DevOps, AWS Lambda, ECS, S3, API Gateway, CloudFormation, Docker, OpenShift</dd></div>
+<div><dt>Messaging and security</dt><dd>IBM MQ, RabbitMQ, Ocelot, Keycloak, OAuth, MSAL</dd></div>
+<div><dt>Testing</dt><dd>xUnit, Moq, AutoFixture, Test-Driven Development</dd></div>
+<div><dt>Databases</dt><dd>SQL Server, MySQL, PostgreSQL</dd></div>
+<div><dt>Tools and methods</dt><dd>Git, Bitbucket, Jira, Confluence, ServiceNow, Visual Studio, VS Code, Power Apps, Power Automate, Agile, Scrum</dd></div>
+    </dl>
+  </section>
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul class="plain"><li>70-483 Programming in C#</li><li>70-486 Developing ASP.NET MVC Web Applications</li><li>70-480 Programming in HTML5 with JavaScript and CSS3</li><li>70-532 Developing Microsoft Azure Solutions</li><li>AZ-304 Designing Microsoft Azure Infrastructure Solutions</li></ul>
+  </section>
+  <section id="education" class="edu">
+    <h2>Education</h2>
+    <p><strong>Bachelor of Technology</strong>, Y.C.E.T, Kollam, India. 2010 to 2014.</p>
+  </section>
+</main>
+<footer><div class="wrap">Vijil V Pillai. Last updated November 2026.</div></footer>
+</body>
+</html>
