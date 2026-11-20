@@ -105,6 +105,21 @@ section{padding:4rem 0 0}
 .edu b{font-weight:600}
 .edu span{color:var(--muted)}
 
+/* contact */
+.contact{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:2rem 1.75rem;box-shadow:var(--shadow)}
+.contact p{margin:0 0 1.5rem;max-width:60ch;color:var(--muted);font-size:1.05rem}
+.contact-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.contact-list a{display:block;padding:1rem 1.1rem;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);background:var(--bg)}
+.contact-list a:hover{border-color:var(--accent)}
+.contact-list small{display:block;color:var(--muted);font-size:.8rem;margin-bottom:.15rem}
+.contact-list strong{font-weight:600;color:var(--accent-ink);word-break:break-word}
+.contact .cta{margin-top:1.5rem}
+.btn.ghost-dark{border:1px solid var(--line);color:var(--ink)}
+.btn.ghost-dark:hover{border-color:var(--accent)}
+.btn.solid{background:var(--accent);color:#fff}
+.btn.solid:hover{background:var(--accent-ink)}
+@media (prefers-color-scheme: dark){.btn.solid{color:#06242a}.btn.solid:hover{background:#7fd8e1}}
+
 /* footer */
 footer{margin-top:5rem;background:var(--navy);color:var(--on-navy-muted);padding:2.5rem 0}
 footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
@@ -130,7 +145,7 @@ footer a{color:#8fd9e2}
   <div class="wrap">
     <a class="brand" href="#top">Vijil V Pillai</a>
     <nav aria-label="Page sections">
-      <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#certifications">Certifications</a><a href="#education">Education</a>
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#certifications">Certifications</a><a href="#education">Education</a><a href="#contact">Contact</a>
     </nav>
   </div>
 </div>
@@ -142,7 +157,10 @@ footer a{color:#8fd9e2}
       <p class="role-line">Systems Engineer &middot; .NET and Azure</p>
       <p class="lede">I design and build enterprise web applications, APIs and cloud services, and turn business requirements into reliable software.</p>
       <div class="cta">
-        <a class="btn primary" href="#experience">View experience</a>
+        <!-- Download CV -->
+        <a class="btn primary" href="Vijil_V_Pillai_Resume_16112026.pdf" download="Vijil_V_Pillai_Resume_16112026.pdf">Download CV</a>
+        <a class="btn ghost" href="#contact">Contact me</a>
+        <a class="btn ghost" href="#experience">View experience</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/vijil-v-pillai" rel="me noopener">LinkedIn</a>
       </div>
     </div>
@@ -284,12 +302,27 @@ footer a{color:#8fd9e2}
     <div class="head"><h2>Education</h2></div>
     <div class="edu"><div><b>Bachelor of Technology</b><br><span>Y.C.E.T, Kollam, India</span></div><span>2010 &ndash; 2014</span></div>
   </section>
+
+  <section id="contact">
+    <div class="head"><h2>Contact me</h2></div>
+    <div class="contact">
+      <p>Interested in working together or want to know more about my experience? Get in touch, I'm happy to hear from you.</p>
+      <div class="contact-list">
+        <a href="https://www.linkedin.com/in/vijil-v-pillai" rel="me noopener"><small>LinkedIn</small><strong>linkedin.com/in/vijil-v-pillai</strong></a>
+        <a href="https://github.com/vijilvpillai" rel="me noopener"><small>GitHub</small><strong>github.com/YOUR-GITHUB-USERNAME</strong></a>
+      </div>
+      <div class="cta">
+        <a class="btn solid" href="https://mail.google.com/mail/?view=cm&fs=1&to=vijilpillaiqatar@gmail.com&su=Hello%20Vijil" target="_blank" rel="noopener">Send an email</a>
+        <a class="btn ghost-dark" href="Vijil_V_Pillai_Resume_16112026.pdf" download="Vijil_V_Pillai_Resume_16112026.pdf">Download CV</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
   <div class="wrap">
     <span>&copy; 2026 Vijil V Pillai</span>
-    <a href="https://www.linkedin.com/in/vijil-v-pillai" rel="me noopener">Connect on LinkedIn</a>
+    <span><a href="#contact">Contact me</a> &middot; <a href="https://www.linkedin.com/in/vijil-v-pillai" rel="me noopener">Connect on LinkedIn</a></span>
   </div>
 </footer>
 </body>
