@@ -173,7 +173,8 @@ section{padding:4.5rem 0 0}
   background:#fff;border:1px solid color-mix(in srgb,var(--b) 30%,#dde3ec);box-shadow:0 6px 16px -10px color-mix(in srgb,var(--b) 80%,transparent);transition:transform .35s var(--ease)}
 .role:hover .logo{transform:rotate(-4deg) scale(1.06)}
 .logo::before{content:attr(data-mono);position:absolute;inset:0;display:grid;place-items:center;font:800 .95rem "Bricolage Grotesque",sans-serif;color:#fff;background:linear-gradient(135deg,var(--b),color-mix(in srgb,var(--b) 60%,#000))}
-.logo img{position:relative;width:70%;height:70%;object-fit:contain;background:#fff;border-radius:4px;box-shadow:0 0 0 .5rem #fff}
+.logo img{position:relative;width:76%;height:76%;object-fit:contain;image-rendering:auto;border-radius:6px}
+.logo.has-img::before{background:#fff;content:""}
 .logo.grad svg{position:relative;width:60%;height:60%;color:#fff}
 .logo.sm{width:2.75rem;height:2.75rem;border-radius:12px}
 .role h3{font-size:1.28rem;font-weight:700;display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
@@ -507,7 +508,7 @@ svg.ic{color:var(--c)}
     <aside class="now in-hero" style="--d:.4s" aria-label="Current role">
       <h2>Currently</h2>
       <div class="now-head">
-        <span class="logo" style="--b:#5c0632" data-mono="QR"><img src="https://www.google.com/s2/favicons?domain=qatarairways.com&sz=128" alt="Qatar Airways logo" width="36" height="36"></span>
+        <span data-domain="qatarairways.com" data-alt="Qatar Airways logo" class="logo" style="--b:#5c0632" data-mono="QR"></span>
         <div><p class="t">Systems Engineer</p><p class="o">Qatar Airways, Doha</p></div>
       </div>
       <ul class="chips"><li>.NET Core</li><li>EF Core</li><li>Angular</li><li>Azure DevOps</li><li>OpenShift</li><li>Keycloak</li></ul>
@@ -628,7 +629,7 @@ svg.ic{color:var(--c)}
 <article class="role is-current reveal" style="--b:#5c0632">
   <header class="role-head">
     <div class="who">
-      <span class="logo" style="--b:#5c0632" data-mono="QR"><img src="https://www.google.com/s2/favicons?domain=qatarairways.com&sz=128" alt="Qatar Airways logo" width="36" height="36" loading="lazy"></span>
+      <span data-domain="qatarairways.com" data-alt="Qatar Airways logo" class="logo" style="--b:#5c0632" data-mono="QR"></span>
       <div>
         <h3>Systems Engineer <span class="badge">Current</span></h3>
         <p class="where"><strong>Qatar Airways</strong> &middot; Doha, Qatar</p>
@@ -654,7 +655,7 @@ svg.ic{color:var(--c)}
   <details class="acc">
   <summary class="role-head">
     <div class="who">
-      <span class="logo" style="--b:#2e2e38" data-mono="EY"><img src="https://www.google.com/s2/favicons?domain=ey.com&sz=128" alt="EY logo" width="36" height="36" loading="lazy"></span>
+      <span data-domain="ey.com" data-alt="EY logo" class="logo" style="--b:#2e2e38" data-mono="EY"></span>
       <div>
         <h3>Senior Technical Lead</h3>
         <p class="where"><strong>EY GDS</strong> &middot; Trivandrum, India</p>
@@ -682,7 +683,7 @@ svg.ic{color:var(--c)}
   <details class="acc">
   <summary class="role-head">
     <div class="who">
-      <span class="logo" style="--b:#00a3e0" data-mono="V"><img src="https://www.google.com/s2/favicons?domain=virtusa.com&sz=128" alt="Virtusa logo" width="36" height="36" loading="lazy"></span>
+      <span data-domain="virtusa.com" data-alt="Virtusa logo" class="logo" style="--b:#00a3e0" data-mono="V"></span>
       <div>
         <h3>Senior Software Engineer</h3>
         <p class="where"><strong>Virtusa Consulting Services</strong> &middot; Chennai, India</p>
@@ -707,7 +708,7 @@ svg.ic{color:var(--c)}
   <details class="acc">
   <summary class="role-head">
     <div class="who">
-      <span class="logo" style="--b:#e4002b" data-mono="CES"><img src="https://www.google.com/s2/favicons?domain=cesltd.com&sz=128" alt="CES IT logo" width="36" height="36" loading="lazy"></span>
+      <span data-domain="cesltd.com" data-alt="CES IT logo" class="logo" style="--b:#e4002b" data-mono="CES"></span>
       <div>
         <h3>Software Engineer</h3>
         <p class="where"><strong>CES IT</strong> &middot; Chennai, India</p>
@@ -733,7 +734,7 @@ svg.ic{color:var(--c)}
   <details class="acc">
   <summary class="role-head">
     <div class="who">
-      <span class="logo" style="--b:#ee0000" data-mono="VZ"><img src="https://www.google.com/s2/favicons?domain=verizon.com&sz=128" alt="Verizon logo" width="36" height="36" loading="lazy"></span>
+      <span data-domain="verizon.com" data-alt="Verizon logo" class="logo" style="--b:#ee0000" data-mono="VZ"></span>
       <div>
         <h3>System Analyst Developer</h3>
         <p class="where"><strong>Verizon Data Services India</strong> &middot; Chennai, India</p>
@@ -756,7 +757,7 @@ svg.ic{color:var(--c)}
   <details class="acc">
   <summary class="role-head">
     <div class="who">
-      <span class="logo" style="--b:#a100ff" data-mono="A"><img src="https://www.google.com/s2/favicons?domain=accenture.com&sz=128" alt="Accenture logo" width="36" height="36" loading="lazy"></span>
+      <span data-domain="accenture.com" data-alt="Accenture logo" class="logo" style="--b:#a100ff" data-mono="A"></span>
       <div>
         <h3>Application Development Analyst</h3>
         <p class="where"><strong>Accenture</strong> &middot; Chennai, India</p>
@@ -780,7 +781,7 @@ svg.ic{color:var(--c)}
   <details class="acc">
   <summary class="role-head">
     <div class="who">
-      <span class="logo" style="--b:#0033a1" data-mono="C"><img src="https://www.google.com/s2/favicons?domain=cognizant.com&sz=128" alt="Cognizant logo" width="36" height="36" loading="lazy"></span>
+      <span data-domain="cognizant.com" data-alt="Cognizant logo" class="logo" style="--b:#0033a1" data-mono="C"></span>
       <div>
         <h3>Programmer Analyst</h3>
         <p class="where"><strong>Cognizant Technology Solutions</strong> &middot; Chennai, India</p>
@@ -954,11 +955,18 @@ svg.ic{color:var(--c)}
     });
   });
 
-  // company logos: fall back to the monogram tile if the image fails
-  document.querySelectorAll('.logo img').forEach(function(img){
-    function drop(){ img.remove(); }
-    img.addEventListener('error',drop);
-    if(img.complete && img.naturalWidth===0) drop();
+  // company logos: try several sources, keep the sharpest; otherwise keep the crisp monogram tile
+  document.querySelectorAll('.logo[data-domain]').forEach(function(tile){
+    var d=tile.getAttribute('data-domain'), w=d.indexOf('www.')===0?d:'www.'+d;
+    var src=['https://'+w+'/apple-touch-icon.png','https://'+d+'/apple-touch-icon.png',
+      'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://'+w+'&size=256',
+      'https://icons.duckduckgo.com/ip3/'+d+'.ico','https://www.google.com/s2/favicons?domain='+d+'&sz=256'];
+    var best=null, left=src.length, MIN=64;
+    function done(){ if(--left>0 && !(best && best.naturalWidth>=180)) return; if(tile.dataset.set) return;
+      if(best && best.naturalWidth>=MIN){ tile.dataset.set=1; best.className='';best.alt=tile.getAttribute('data-alt')||'';best.width=36;best.height=36;best.decoding='async'; tile.appendChild(best); tile.classList.add('has-img'); } }
+    src.forEach(function(u){ var im=new Image(); im.referrerPolicy='no-referrer';
+      im.onload=function(){ if(!best||im.naturalWidth>best.naturalWidth) best=im; done(); };
+      im.onerror=done; im.src=u; });
   });
 
   // tenure labels
