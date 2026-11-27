@@ -114,6 +114,17 @@ ul{margin:0;padding:0;list-style:none}
 .blob.b{width:22rem;height:22rem;left:-8rem;bottom:-10rem;background:radial-gradient(circle,var(--blob2),transparent 65%);animation:float 18s ease-in-out infinite reverse}
 .ring{position:absolute;right:-7rem;top:-7rem;width:28rem;height:28rem;border-radius:50%;border:1px solid rgba(var(--hi-rgb),.25);box-shadow:0 0 0 3rem rgba(var(--hi-rgb),.04),0 0 0 6rem rgba(var(--hi-rgb),.025);pointer-events:none;z-index:-1;animation:spin 60s linear infinite}
 .ring::after{content:"";position:absolute;top:50%;left:-5px;width:10px;height:10px;border-radius:50%;background:var(--hi);box-shadow:0 0 16px var(--hi)}
+.tech-bg{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.tech-bg img{position:absolute;width:var(--s);height:var(--s);object-fit:contain;filter:brightness(0) invert(1);opacity:.17;animation:tspin var(--sp) linear infinite;animation-direction:var(--dir);animation-delay:var(--dl)}
+@keyframes tspin{from{transform:rotate(var(--r))}to{transform:rotate(calc(var(--r) + 360deg))}}
+@media (max-width:860px){.tech-bg img:nth-child(n+11){display:none}.tech-bg img{opacity:.13}}
+.page-tech{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.page-tech i{position:absolute;width:var(--s);height:var(--s);background:var(--accent);opacity:.08;
+  -webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;
+  animation:tspin var(--sp) linear infinite;animation-direction:var(--dir);animation-delay:var(--dl)}
+@media (prefers-color-scheme: dark){.page-tech i{opacity:.1}}
+@media (max-width:860px){.page-tech i:nth-child(n+11){display:none}}
+@media print{.page-tech,.tech-bg{display:none}}
 .hero .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:3rem;align-items:center}
 .hello{display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--tint);background:rgba(var(--hi-rgb),.1);border:1px solid rgba(var(--hi-rgb),.25);padding:.3rem .8rem;border-radius:99px;margin-bottom:1.1rem}
 .hello .dot{width:8px;height:8px;border-radius:50%;background:#51cf66;box-shadow:0 0 0 0 rgba(81,207,102,.6);animation:pulse 2s infinite}
@@ -163,6 +174,43 @@ section{padding:4.5rem 0 0}
 .focus li:first-child{border-top:0}
 
 
+/* domains */
+.dom-lede{max-width:66ch;margin:-.5rem 0 1.75rem;color:var(--muted);font-size:1.05rem}
+.domains{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-flow:row dense;gap:1rem}
+.dom{--b:var(--accent);position:relative;display:flex;flex-direction:column;gap:.7rem;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.25rem 1.2rem 1.1rem;box-shadow:var(--shadow);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
+.dom::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--b),color-mix(in srgb,var(--b) 40%,var(--alt)))}
+.dom:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:color-mix(in srgb,var(--b) 45%,var(--line))}
+.dom-ic{display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:11px;background:var(--chip);color:var(--accent-ink);transition:background .25s,color .25s}
+.dom-ic svg{width:1.25rem;height:1.25rem}
+.dom:hover .dom-ic{background:var(--accent);color:#fff}
+.dom h3{font-size:1.08rem;font-weight:700}
+.dom p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.55;flex:1}
+.dom-org{display:flex;align-items:center;gap:.6rem;padding-top:.75rem;border-top:1px dashed var(--line);font-size:.86rem;font-weight:600}
+.dom-org .logo{width:2rem;height:2rem;border-radius:9px;box-shadow:none}
+.dom-org .logo::before{font-size:.62rem}
+.dom-org small{display:block;font-weight:400;color:var(--muted);font-size:.76rem}
+.dom-org{flex-wrap:wrap}
+.dom-org-sep{width:1px;align-self:stretch;background:var(--line);margin:0 .4rem}
+@media (prefers-color-scheme: dark){.dom:hover .dom-ic{color:var(--hi-ink)}}
+.dom-wide{grid-column:span 2}
+.dom-wide p,.dom:has(.metrics) p{flex:none}
+.dom:not(.dom-wide) .metrics{grid-template-columns:1fr}
+.dom:not(.dom-wide) .metrics b{font-size:1.15rem}
+.metrics b{white-space:nowrap}
+.metrics{--b:var(--accent)} /* one site-wide colour for every metric tile */
+.metrics li[data-ic]{padding-right:2.4rem}
+.m-ic{position:absolute;top:.55rem;right:.55rem;display:grid;place-items:center;width:1.55rem;height:1.55rem;border-radius:8px;
+  background:color-mix(in srgb,var(--b,var(--accent)) 14%,var(--card));color:var(--b,var(--accent));transition:transform .3s var(--ease),background .3s,color .3s}
+.m-ic svg{width:.95rem;height:.95rem}
+.metrics li:hover .m-ic{transform:rotate(-8deg) scale(1.08);background:var(--b,var(--accent));color:#fff}
+@media (prefers-color-scheme: dark){.m-ic{color:color-mix(in srgb,var(--b,var(--accent)) 45%,#fff);background:color-mix(in srgb,var(--b,var(--accent)) 30%,var(--card))}}
+.dom .metrics{grid-template-columns:repeat(3,1fr);gap:.5rem;margin:.1rem 0 auto}
+.dom .metrics li{padding:.6rem .7rem .55rem;border-radius:10px}
+.dom .metrics b{font-size:1.2rem}
+.dom .metrics span{font-size:.74rem;margin-top:.2rem}
+@media (max-width:960px){.domains{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.dom-org-sep{flex-basis:100%;height:0;margin:0;background:none}.domains{grid-template-columns:1fr}.dom-wide{grid-column:auto}.dom .metrics{grid-template-columns:repeat(2,1fr)}}
+
 /* experience timeline */
 .timeline{position:relative;display:grid;gap:1.4rem;padding-left:2.25rem}
 .timeline::before{content:"";position:absolute;left:.6rem;top:.5rem;bottom:.5rem;width:2px;border-radius:2px;background:linear-gradient(var(--accent),var(--line) 25%,var(--line))}
@@ -191,6 +239,14 @@ section{padding:4.5rem 0 0}
 .when em{font-style:normal;color:var(--accent-ink);font-weight:600;margin-left:.35rem}
 .proj{margin:1.1rem 0 .3rem;color:var(--muted);font-size:.95rem}
 .proj span{display:inline-block;font:600 .72rem "IBM Plex Sans",sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-ink);background:var(--chip);padding:.15rem .5rem;border-radius:6px;margin-right:.6rem}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem;margin:1.15rem 0 .4rem}
+.metrics li{position:relative;padding:.75rem .9rem .7rem;border-radius:12px;background:color-mix(in srgb,var(--b,var(--accent)) 6%,var(--bg));border:1px solid color-mix(in srgb,var(--b,var(--accent)) 22%,var(--line));overflow:hidden;transition:transform .25s var(--ease),border-color .25s}
+.metrics li::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--b,var(--accent))}
+.metrics li:hover{transform:translateY(-2px);border-color:var(--b,var(--accent))}
+.metrics b{display:block;font:800 1.45rem/1.1 "Bricolage Grotesque",sans-serif;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.metrics span{display:block;margin-top:.25rem;font-size:.8rem;line-height:1.35;color:var(--muted)}
+.metrics em{font-style:normal;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+@media (prefers-color-scheme: dark){.metrics li{background:color-mix(in srgb,var(--b,var(--accent)) 14%,var(--card));border-color:color-mix(in srgb,var(--b,var(--accent)) 40%,var(--line))}}
 .bul{margin:.6rem 0 1.15rem;padding-left:0}
 .bul li{position:relative;margin:.45rem 0;padding-left:1.4rem;max-width:80ch}
 .bul li::before{content:"";position:absolute;left:.15rem;top:.65rem;width:.5rem;height:.5rem;border-radius:2px;background:var(--accent);transform:rotate(45deg);opacity:.85}
@@ -483,7 +539,7 @@ svg.ic{color:var(--c)}
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Vijil V Pillai, back to top"><i>VP</i><span><b>Vijil V Pillai</b><small>Systems Engineer &middot; .NET &amp; Azure</small></span></a>
     <nav id="site-nav" aria-label="Primary">
-      <a href="#about">About</a><a href="#stack">Stack</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
+      <a href="#about">About</a><a href="#domains">Domains</a><a href="#stack">Stack</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
       <a class="nav-cv" href="Vijil_V_Pillai_Resume.pdf" download="Vijil_V_Pillai_Resume.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download CV</a>
     </nav>
     <div class="bar-actions">
@@ -497,6 +553,7 @@ svg.ic{color:var(--c)}
 
 <header class="hero" id="top">
   <span class="blob a"></span><span class="blob b"></span><span class="ring"></span>
+  <div class="tech-bg" aria-hidden="true"></div>
   <div class="wrap">
     <div>
       <p class="hello in-hero"><span class="dot"></span>Based in Doha, Qatar</p>
@@ -526,7 +583,7 @@ svg.ic{color:var(--c)}
     <ul>
       <li class="reveal"><span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><b data-count="11" data-suffix="+ years">11+ years</b><span>in software development</span></li>
       <li class="reveal" style="--d:.08s"><span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M14 9h1M9 13h1M14 13h1M10 21v-4h4v4"/></svg></span><b data-count="7">7</b><span>organisations across India and Qatar</span></li>
-      <li class="reveal" style="--d:.16s"><span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 010-8 5.5 5.5 0 0110.6 1.5A3.3 3.3 0 0117 18z"/></svg></span><b>Azure + AWS</b><span>cloud and serverless delivery</span></li>
+      <li class="reveal" style="--d:.16s"><span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0M16 4.5a3.5 3.5 0 010 7M18 14.5a6.5 6.5 0 013.5 5.5"/></svg></span><b data-count="20" data-suffix="K+">20K+</b><span>users served by systems I've built</span></li>
       <li class="reveal" style="--d:.24s"><span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 13.9L7 22l5-3 5 3-1.5-8.1"/></svg></span><b data-count="5">5</b><span>Microsoft certifications</span></li>
     </ul>
   </div>
@@ -551,6 +608,84 @@ svg.ic{color:var(--c)}
         </ul>
       </div>
     </div>
+  </section>
+
+  <section id="domains"><span class="wm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+    <div class="head reveal"><span class="kicker">Industries</span><h2><span class="h-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>Domain expertise</h2></div>
+    <p class="dom-lede reveal">I've delivered software across seven business domains, from finance and healthcare to telecom, energy and aviation, so I can pick up the rules of a new business quickly.</p>
+    <ul class="domains">
+      <li class="dom dom-wide reveal" style="--b:#5c0632">
+        <span class="dom-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>
+        <h3>Aviation corporate systems</h3>
+        <p>Workforce management, reservations, crew notifications and material management for Qatar Airways, first through Virtusa and now in-house.</p>
+        <ul class="metrics" aria-label="Impact in numbers">
+          <li data-ic="users"><b data-count="20" data-suffix="K+">20K+</b><span>accommodation users, incl. <em data-count="2500" data-suffix="+">2,500+</em> crew</span></li>
+          <li data-ic="team"><b data-count="250" data-suffix="+">250+</b><span>workforce users: 200 staff, 50 service providers</span></li>
+          <li data-ic="clock"><b data-count="4" data-suffix=" hrs/day">4 hrs/day</b><span>manual effort saved</span></li>
+          <li data-ic="calendar"><b data-count="100" data-suffix="+ hrs">100+ hrs</b><span>manual booking effort saved</span></li>
+          <li data-ic="plug"><b data-count="100" data-suffix="+">100+</b><span>vendors using the APIs</span></li>
+          <li data-ic="report"><b data-count="20" data-suffix="+">20+</b><span>operational reports delivered</span></li>
+          <li data-ic="box"><b data-count="100" data-suffix="K+">100K+</b><span>material requests raised since launch</span></li>
+          <li data-ic="clipboard"><b data-count="1" data-suffix="M+">1M+</b><span>work orders created since launch</span></li>
+          <li data-ic="zap"><b>5 &rarr; 1 day</b><span>material request processing time (80% faster)</span></li>
+        </ul>
+        <div class="dom-org"><span class="logo has-img" style="--b:#5c0632" data-mono="QR"><img src="assets/logos/qatar-airways.svg" alt="" width="24" height="24" decoding="async" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span><span>Qatar Airways<small>2023 &ndash; present</small></span><span class="dom-org-sep" aria-hidden="true"></span><span class="logo has-img" style="--b:#00a3e0" data-mono="V"><img src="assets/logos/virtusa.svg" alt="" width="24" height="24" decoding="async" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span><span>Virtusa<small>2020 &ndash; 2021 &middot; client Qatar Airways</small></span></div>
+      </li>
+      <li class="dom dom-wide reveal" style="--b:#2e2e38;--d:.05s">
+        <span class="dom-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h3>Information security and energy</h3>
+        <p>Two clients: credential scanning and data ingestion for information security, and customer notifications for an energy provider.</p>
+        <ul class="metrics" aria-label="Impact in numbers">
+          <li data-ic="bell"><b data-count="10.65" data-decimals="2" data-suffix="M">10.65M</b><span>energy customers notified</span></li>
+          <li data-ic="repo"><b data-count="100" data-suffix="+">100+</b><span>client Azure DevOps repos scanned</span></li>
+          <li data-ic="bug"><b data-count="50" data-suffix="+">50+</b><span>issues found per repo</span></li>
+          <li data-ic="db"><b data-count="10" data-suffix="K+">10K+</b><span>records a day from 3 source systems</span></li>
+          <li data-ic="mail"><b data-count="5" data-suffix="K+">5K+</b><span>emails per bulk run</span></li>
+          <li data-ic="briefcase"><b data-count="2">2</b><span>clients: energy and infosec</span></li>
+        </ul>
+        <div class="dom-org"><span class="logo has-img" style="--b:#2e2e38" data-mono="EY"><img src="assets/logos/ey.svg" alt="" width="24" height="24" decoding="async" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span><span>EY GDS<small>2021 &ndash; 2023</small></span></div>
+      </li>
+      <li class="dom reveal" style="--b:#e4002b">
+        <span class="dom-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.2a2 2 0 002 1.6h8.6a2 2 0 002-1.5L22 7H6"/></svg></span>
+        <h3>E-commerce</h3>
+        <p>Cloud-native microservices and serverless APIs on AWS and Azure for online commerce.</p>
+        <ul class="metrics" aria-label="Impact in numbers">
+          <li data-ic="trend"><b>$1M &rarr; $5M</b><span>revenue growth the platform scaled to</span></li>
+          <li data-ic="store"><b data-count="60" data-suffix="K+">60K+</b><span>merchants on the platform</span></li>
+        </ul>
+        <div class="dom-org"><span class="logo has-img" style="--b:#e4002b" data-mono="CES"><img src="assets/logos/ces-it.png" alt="" width="24" height="24" decoding="async" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span><span>CES IT<small>2019 &ndash; 2020</small></span></div>
+      </li>
+      <li class="dom reveal" style="--b:#ee0000;--d:.05s">
+        <span class="dom-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-8M8.5 8.5a5 5 0 017 0M5.6 5.6a9 9 0 0112.8 0"/><circle cx="12" cy="11" r="1"/><path d="M8 22h8"/></svg></span>
+        <h3>Telecom</h3>
+        <p>Customer equipment and offers, plus the promotions qualification engine.</p>
+        <ul class="metrics" aria-label="Impact in numbers">
+          <li data-ic="phone"><b data-count="18" data-suffix="M">18M</b><span>landline customers</span></li>
+          <li data-ic="tag"><b data-count="280" data-suffix="+">280+</b><span>sale-day promotion offers</span></li>
+        </ul>
+        <div class="dom-org"><span class="logo has-img" style="--b:#ee0000" data-mono="VZ"><img src="assets/logos/verizon.svg" alt="" width="24" height="24" decoding="async" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span><span>Verizon<small>2018</small></span></div>
+      </li>
+      <li class="dom reveal" style="--b:#a100ff;--d:.1s">
+        <span class="dom-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span>
+        <h3>Healthcare</h3>
+        <p>Sales hierarchy, customer data integration, spend reporting and rep commission realignment.</p>
+        <ul class="metrics" aria-label="Impact in numbers">
+          <li data-ic="team"><b data-count="3500">3,500</b><span>sales reps' commissions calculated</span></li>
+          <li data-ic="coin"><b data-count="30" data-prefix="$" data-suffix="K+">$30K+</b><span>commission per rep per year</span></li>
+        </ul>
+        <div class="dom-org"><span class="logo has-img" style="--b:#a100ff" data-mono="A"><img src="assets/logos/accenture.svg" alt="" width="24" height="24" decoding="async" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span><span>Accenture<small>2017 &ndash; 2018</small></span></div>
+      </li>
+      <li class="dom reveal" style="--b:#0033a1;--d:.15s">
+        <span class="dom-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M4 10h16M12 3l8 5H4zM6 10v8M10 10v8M14 10v8M18 10v8"/></svg></span>
+        <h3>Finance</h3>
+        <p>Financial application used for card processing.</p>
+        <ul class="metrics" aria-label="Impact in numbers">
+          <li data-ic="card"><b data-count="350" data-suffix="M">350M</b><span>cards processed a year</span></li>
+          <li data-ic="zap"><b>15 &rarr; 3 days</b><span>processing time (80% faster)</span></li>
+        </ul>
+        <div class="dom-org"><span class="logo has-img" style="--b:#0033a1" data-mono="C"><img src="assets/logos/cognizant.svg" alt="" width="24" height="24" decoding="async" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span><span>Cognizant<small>2015 &ndash; 2017</small></span></div>
+      </li>
+    </ul>
   </section>
 
   <section id="stack">
@@ -691,7 +826,7 @@ svg.ic{color:var(--c)}
       <span data-logo="virtusa" data-alt="Virtusa logo" class="logo has-img" style="--b:#00a3e0" data-mono="V"><img src="assets/logos/virtusa.svg" alt="Virtusa logo" width="36" height="36" decoding="async" onerror="this.parentNode.classList.remove('has-img');this.remove()"></span>
       <div>
         <h3>Senior Software Engineer</h3>
-        <p class="where"><strong>Virtusa Consulting Services</strong> &middot; Chennai, India</p>
+        <p class="where"><strong>Virtusa Consulting Services</strong> &middot; Chennai, India &middot; Client: Qatar Airways</p>
       </div>
     </div>
     <p class="when"><time datetime="2020-03">Mar 2020</time> &ndash; <time datetime="2021-01">Jan 2021</time></p>
@@ -877,7 +1012,7 @@ svg.ic{color:var(--c)}
     </div>
     <nav aria-label="Footer">
       <h4>Navigate</h4>
-      <ul><li><a href="#about">About</a></li><li><a href="#stack">Stack</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#education">Education</a></li></ul>
+      <ul><li><a href="#about">About</a></li><li><a href="#domains">Domains</a></li><li><a href="#stack">Stack</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#education">Education</a></li></ul>
     </nav>
     <div>
       <h4>Expertise</h4>
@@ -945,6 +1080,65 @@ svg.ic{color:var(--c)}
       .forEach(function(a){n.setAttribute(a[0],a[1]);});
     n.innerHTML=G[k]||G.code; return n;
   }
+  // hero background: faint tech-stack logos (left %, top %, size rem, tilt deg)
+  var TB=document.querySelector('.tech-bg');
+  if(TB){
+    [['dotnetcore',4,12,3.2,-8],['angular',90,9,3,10],['azure',46,6,2.4,6],['react',63,78,3.4,-6],['docker',8,74,3,8],
+     ['csharp',30,84,2.6,-10],['typescript',76,44,2.4,12],['amazonwebservices-original-wordmark',93,70,3,-4],['microsoftsqlserver',20,40,2.4,6],['azuredevops',55,30,2.2,-12],
+     ['openshift',38,58,2.2,8],['rabbitmq',70,16,2.2,-6],['keycloak',86,90,2.4,10],['postgresql',48,90,2.4,-8],['git',14,94,2,12],
+     ['nodejs',28,10,2.2,-4],['javascript',62,56,2,8],['mysql',82,28,2.6,-10],['html5',2,46,2.2,6],['visualstudio',97,40,2,-8]]
+    .forEach(function(t,i){
+      var im=new Image(); im.alt=''; im.decoding='async'; im.loading='lazy';
+      im.src=D+(t[0].indexOf('-')>0?t[0]:t[0]+'-original')+'.svg';
+      im.style.cssText='left:'+t[1]+'%;top:'+t[2]+'%;--s:'+t[3]+'rem;--r:'+t[4]+'deg;--dl:'+(-i*.9)+'s;--sp:'+(18+(i*7)%19)+'s;--dir:'+(i%2?'reverse':'normal');
+      im.onerror=function(){ im.remove(); };
+      TB.appendChild(im);
+    });
+  }
+
+  // whole-page background: same logos, tinted with the theme accent, fixed behind every section
+  var PT=document.createElement('div'); PT.className='page-tech'; PT.setAttribute('aria-hidden','true');
+  [['dotnetcore',6,8],['angular',88,6],['azure',47,14],['react',26,30],['docker',72,26],['csharp',94,44],['typescript',12,52],
+   ['amazonwebservices-original-wordmark',58,46],['microsoftsqlserver',36,66],['azuredevops',82,64],['openshift',4,86],['rabbitmq',64,84],
+   ['keycloak',22,92],['postgresql',90,90],['git',44,90],['nodejs',16,20],['javascript',78,40],['mysql',50,30],['html5',96,18],['visualstudio',32,48]]
+  .forEach(function(t,i){
+    var s=document.createElement('i'), url=D+(t[0].indexOf('-')>0?t[0]:t[0]+'-original')+'.svg';
+    s.style.cssText='left:'+t[1]+'%;top:'+t[2]+'%;--m:url("'+url+'");--s:'+(2.2+(i*3)%5*.35)+'rem;--r:'+((i*37)%40-20)+'deg;--dl:'+(-i*1.3)+'s;--sp:'+(22+(i*5)%21)+'s;--dir:'+(i%2?'normal':'reverse');
+    PT.appendChild(s);
+  });
+  document.body.insertBefore(PT,document.body.firstChild);
+
+  // metric tile icons
+  var MI = {
+    users:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0M16 4.5a3.5 3.5 0 010 7M18 14.5a6.5 6.5 0 013.5 5.5"/>',
+    team:'<circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2"/><circle cx="19" cy="10" r="2"/><path d="M7 20a5 5 0 0110 0M1.5 19a3.5 3.5 0 015-3M22.5 19a3.5 3.5 0 00-5-3"/>',
+    clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/>',
+    plug:'<path d="M9 7V3M15 7V3M7 7h10v4a5 5 0 01-10 0zM12 16v5"/>',
+    report:'<path d="M4 20h16M7 16v-6M12 16V5M17 16v-4"/>',
+    box:G.box,
+    clipboard:'<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6M9 18h3"/>',
+    zap:'<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+    bell:'<path d="M6 16v-5a6 6 0 0112 0v5l2 2H4zM10 21h4"/>',
+    repo:'<circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8.5v7M18 10.5c0 4-6 3-10 6"/>',
+    bug:'<rect x="8" y="7" width="8" height="13" rx="4"/><path d="M9.5 7a2.5 2.5 0 015 0M3 13h5M16 13h5M4 8l4 2M20 8l-4 2M4 19l4-2M20 19l-4-2"/>',
+    db:G.db,
+    mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+    briefcase:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 13h18"/>',
+    trend:'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+    store:'<path d="M4 10v10h16V10M3 4h18l-1 6H4zM9 20v-5h6v5"/>',
+    phone:'<path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/>',
+    tag:'<path d="M3 12V4a1 1 0 011-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.5"/>',
+    coin:'<circle cx="12" cy="12" r="9"/><path d="M15 9.2A3 3 0 0012 7.8c-1.7 0-3 .9-3 2.1 0 2.9 6 1.5 6 4.4 0 1.2-1.3 2.1-3 2.1a3 3 0 01-3-1.4M12 6v1.8M12 16.4V18"/>',
+    card:'<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/>'
+  };
+  document.querySelectorAll('.metrics li[data-ic]').forEach(function(li){
+    var k=li.getAttribute('data-ic'); if(!MI[k]) return;
+    var w=document.createElement('i'); w.className='m-ic'; w.setAttribute('aria-hidden','true');
+    w.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+MI[k]+'</svg>';
+    li.insertBefore(w,li.firstChild);
+  });
+
   document.querySelectorAll('.chips').forEach(function(ul){
     ul.querySelectorAll('li').forEach(function(li,i){
       li.style.setProperty('--i',i);
@@ -1007,16 +1201,28 @@ svg.ic{color:var(--c)}
   // scroll reveal + counters
   function count(el){
     var to=+el.getAttribute('data-count'), suf=el.getAttribute('data-suffix')||'', t0=null;
-    if(reduce){ el.textContent=to+suf; return; }
-    function step(ts){ if(!t0)t0=ts; var k=Math.min((ts-t0)/1200,1), e=1-Math.pow(1-k,3); el.textContent=Math.round(to*e)+suf; if(k<1)requestAnimationFrame(step); }
+    var dp=+(el.getAttribute('data-decimals')||0);
+    var pre=el.getAttribute('data-prefix')||'';
+    function fmt(n){ return pre+n.toLocaleString('en-US',{minimumFractionDigits:dp,maximumFractionDigits:dp})+suf; }
+    if(reduce){ el.textContent=fmt(to); return; }
+    var dur=to>=1000?1800:1400;
+    function step(ts){ if(!t0)t0=ts; var k=Math.min((ts-t0)/dur,1), e=1-Math.pow(1-k,3); el.textContent=fmt(to*e); if(k<1)requestAnimationFrame(step); }
     requestAnimationFrame(step);
   }
   var items=document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window && !reduce){
     var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); e.target.querySelectorAll('[data-count]').forEach(count); io.unobserve(e.target);} });
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); e.target.querySelectorAll('[data-count]').forEach(function(c){ if(!c.closest('.metrics')) count(c); }); io.unobserve(e.target);} });
     },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
     items.forEach(function(el){io.observe(el);});
+    // metric tiles count up only once they are actually on screen
+    var mo2=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.querySelectorAll('[data-count]').forEach(count); mo2.unobserve(e.target);} });
+    },{threshold:.6});
+    document.querySelectorAll('.metrics').forEach(function(m){
+      m.querySelectorAll('[data-count]').forEach(function(c){ c.textContent=(c.getAttribute('data-prefix')||'')+'0'+(c.getAttribute('data-suffix')||''); });
+      mo2.observe(m);
+    });
   } else items.forEach(function(el){el.classList.add('in');});
 
   // active nav link
