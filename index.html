@@ -9,6 +9,37 @@
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="theme-color" content="#14132e">
+<link rel="canonical" href="https://vijilvpillai.net/">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Vijil V Pillai">
+<meta property="og:url" content="https://vijilvpillai.net/">
+<meta property="og:title" content="Vijil V Pillai – Systems Engineer, .NET and Azure">
+<meta property="og:description" content="Microsoft Certified systems engineer with 11+ years building enterprise apps, APIs and cloud services on .NET, Angular, Azure and AWS, across aviation, energy, telecom, healthcare and finance.">
+<meta property="og:image" content="https://vijilvpillai.net/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Vijil V Pillai, Systems Engineer, .NET and Azure, Doha, Qatar">
+<meta property="profile:first_name" content="Vijil">
+<meta property="profile:last_name" content="Pillai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vijil V Pillai – Systems Engineer, .NET and Azure">
+<meta name="twitter:description" content="11+ years building enterprise apps, APIs and cloud services on .NET, Angular, Azure and AWS.">
+<meta name="twitter:image" content="https://vijilvpillai.net/assets/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Vijil V Pillai",
+  "url": "https://vijilvpillai.net/",
+  "image": "https://vijilvpillai.net/assets/og-image.png",
+  "jobTitle": "Systems Engineer",
+  "worksFor": {"@type": "Organization", "name": "Qatar Airways"},
+  "address": {"@type": "PostalAddress", "addressLocality": "Doha", "addressCountry": "QA"},
+  "alumniOf": {"@type": "CollegeOrUniversity", "name": "Y.C.E.T, Kollam"},
+  "knowsAbout": [".NET Core", "C#", "Angular", "React", "Azure", "AWS", "Microservices", "SQL Server", "Test-driven development"],
+  "sameAs": ["https://www.linkedin.com/in/vijil-v-pillai", "https://github.com/vijilvpillai"]
+}
+</script>
 <script>document.documentElement.classList.add('js')</script>
 <style>
 @font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/bricolage-grotesque-latin-500-normal.woff2") format("woff2")}
@@ -383,8 +414,10 @@ section{position:relative;isolation:isolate}
 .tr span:last-child{color:var(--accent-ink);font-weight:600}
 .tr.th{border-top:0;background:var(--chip);font-weight:700;color:var(--chip-ink)}
 .tr.th span{color:var(--chip-ink)!important}
-.scan{position:absolute;left:0;right:0;height:1.55rem;top:1.6rem;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--accent) 22%,transparent),transparent);border-left:3px solid var(--accent);pointer-events:none;animation:scan 4s steps(1) infinite}
-@keyframes scan{0%{transform:translateY(0)}25%{transform:translateY(100%)}50%{transform:translateY(200%)}75%{transform:translateY(300%)}}
+/* query highlight: each data row lights up in turn, behind its text */
+.tr:not(.th){animation:rowhl 4s steps(1) infinite}
+.tr:nth-child(3){animation-delay:1s}.tr:nth-child(4){animation-delay:2s}.tr:nth-child(5){animation-delay:3s}
+@keyframes rowhl{0%{background:color-mix(in srgb,var(--accent) 14%,var(--card));box-shadow:inset 3px 0 0 var(--accent)}25%,100%{background:transparent;box-shadow:none}}
 @keyframes ripple{0%{transform:translateY(1.2rem) scale(.6);opacity:.8}100%{transform:translateY(1.2rem) scale(1.5);opacity:0}}
 
 @keyframes flow-y{to{background-position:0 22px}}
@@ -745,7 +778,7 @@ svg.ic{color:var(--c)}
         <div class="lane-head"><span class="lane-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span><div><b>Database</b><small>SQL and stored procedures</small></div></div>
         <div class="viz dbviz">
           <div class="cyl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg><i></i><i></i><i></i></div>
-          <div class="tbl"><div class="tr th"><span>Id</span><span>Entity</span><span>Status</span></div><div class="tr"><span>1042</span><span>Allocation</span><span>Active</span></div><div class="tr"><span>1043</span><span>Leave</span><span>Approved</span></div><div class="tr"><span>1044</span><span>Shifts</span><span>Synced</span></div><div class="tr"><span>1045</span><span>Skills</span><span>Updated</span></div><b class="scan"></b></div>
+          <div class="tbl"><div class="tr th"><span>Id</span><span>Entity</span><span>Status</span></div><div class="tr"><span>1042</span><span>Allocation</span><span>Active</span></div><div class="tr"><span>1043</span><span>Leave</span><span>Approved</span></div><div class="tr"><span>1044</span><span>Shifts</span><span>Synced</span></div><div class="tr"><span>1045</span><span>Skills</span><span>Updated</span></div></div>
         </div>
         <ul class="chips"><li>SQL Server</li><li>PostgreSQL</li><li>MySQL</li><li>Dapper</li></ul>
       </div>
@@ -778,13 +811,13 @@ svg.ic{color:var(--c)}
     <p class="when"><time datetime="2023-11">Nov 2023</time> &ndash; <time>Present</time></p>
   </header>
   <ul class="bul">
-    <li><b>Designed and built a workforce management module</b> in .NET Core, EF Core and Angular, covering manpower allocation and utilisation, attendance, leave, resource and skill management.</li>
+    <li><b>Designed and built a workforce management module</b> in .NET Core, EF Core and Angular, covering manpower allocation and utilisation, attendance, leave, resource and skill management, used by <b>250+ staff and service providers</b> and saving <b>4 hours of manual effort a day</b>.</li>
     <li>Built secure REST APIs and role-based screens for supervisors and staff, integrated with existing platform modules through Keycloak and an Ocelot gateway.</li>
-    <li>Streamlined the online reservation module, turning complex business rules into working features alongside business users.</li>
+    <li>Streamlined the online reservation module for <b>20K+ accommodation users</b>, including <b>2,500+ crew</b>, saving <b>100+ hours</b> of manual booking effort.</li>
     <li>Own features end to end: gather requirements, estimate effort, validate with users and release.</li>
-    <li>Helped securely expose platform capabilities to external landlords, service providers and vendors.</li>
+    <li>Helped securely expose platform capabilities to external landlords, service providers and <b>100+ vendors</b>.</li>
     <li>Built a template-driven notification module that sends email, SMS and in-app alerts to cabin and non-cabin crew.</li>
-    <li>Delivered reports used in daily operations and resolved material-management inventory issues with cross-functional teams.</li>
+    <li>Delivered <b>20+ reports</b> used in daily operations and resolved material-management inventory issues with cross-functional teams.</li>
     <li>Provide ITIL-based production support on a rotational on-call roster and take part in vendor selection and management.</li>
     <li>Maintain 100% unit-test coverage on delivered code, using AI assistants (Claude, GitHub Copilot) to speed up development and review.</li>
   </ul>
@@ -806,11 +839,12 @@ svg.ic{color:var(--c)}
   </summary>
   <div class="acc-body">
   <ul class="bul">
-    <li><b>Led technical design and development</b> across several client engagements.</li>
+    <li><b>Led technical design and development</b> for <b>2 clients</b> in energy and information security.</li>
+    <li>Worked on a customer notification module for an energy provider reaching <b>10.65 million customers</b>.</li>
     <li>Modernised a client platform from Angular 5 to 14 and from .NET Core 3.1 to .NET 6.</li>
     <li>Implemented MSAL authentication for React and Angular applications.</li>
-    <li>Built .NET 6 Azure Functions that ingest data feeds from multiple source systems into the application database.</li>
-    <li>Developed a credential-scanner tool on Azure Batch and a bulk email sender with Power Apps and Power Automate.</li>
+    <li>Built .NET 6 Azure Functions that ingest <b>10K+ records a day</b> from <b>3 source systems</b> into the application database.</li>
+    <li>Developed a credential-scanner tool on Azure Batch that scanned <b>100+ client Azure DevOps repos</b>, finding <b>50+ issues in each</b>, and a bulk email sender with Power Apps and Power Automate sending <b>5K+ emails per run</b>.</li>
     <li>Wrote cloud architecture documentation and delivered proofs of concept later adopted into production.</li>
     <li>Championed TDD and engineering best practice with comprehensive unit-test suites.</li>
   </ul>
@@ -835,7 +869,7 @@ svg.ic{color:var(--c)}
   <div class="acc-body">
   <ul class="bul">
     <li><b>Built the material management front end in React</b> from scratch.</li>
-    <li>Developed .NET Core APIs for material requests, store transfers and related workflows.</li>
+    <li>Developed .NET Core APIs for material requests, store transfers and related workflows; the system has handled <b>100K+ material requests</b> and <b>1M+ work orders</b> since launch and cut processing time from <b>5 days to 1</b>.</li>
     <li>Worked directly with business stakeholders to turn requirements into technical designs, and documented the new architecture.</li>
     <li>Proved out RabbitMQ messaging through proofs of concept that the project later adopted.</li>
   </ul>
@@ -859,7 +893,7 @@ svg.ic{color:var(--c)}
   </summary>
   <div class="acc-body">
   <ul class="bul">
-    <li><b>Built Docker-based .NET Core microservices on AWS ECS</b> and serverless APIs with Lambda and API Gateway.</li>
+    <li><b>Built Docker-based .NET Core microservices on AWS ECS</b> and serverless APIs with Lambda and API Gateway for an e-commerce platform serving <b>60K+ merchants</b>, supporting revenue growth from <b>$1M to $5M</b>.</li>
     <li>Implemented OAuth authentication with IdentityServer.</li>
     <li>Automated CI/CD pipelines with AWS CodeBuild and CloudFormation.</li>
     <li>Wrote a Node.js Lambda that uses headless Chrome to capture screenshots of HTML pages.</li>
@@ -885,8 +919,8 @@ svg.ic{color:var(--c)}
   </summary>
   <div class="acc-body">
   <ul class="bul">
-    <li>Enhanced and maintained the customer equipment and offers module.</li>
-    <li>Built features for the offers and promotions qualification engine.</li>
+    <li>Enhanced and maintained the customer equipment and offers module for <b>18M landline customers</b>.</li>
+    <li>Built features for the offers and promotions qualification engine covering <b>280+ sale-day promotion offers</b>.</li>
   </ul>
   <ul class="chips" aria-label="Technologies used"><li>ASP.NET Web API</li><li>AWS EC2</li><li>PostgreSQL</li><li>Scrum</li></ul>
   </div>
@@ -909,7 +943,7 @@ svg.ic{color:var(--c)}
   <div class="acc-body">
   <ul class="bul">
     <li>Enhanced and maintained healthcare applications for sales hierarchy management, customer data integration and spend reporting.</li>
-    <li>Ran the quarterly realignment migration scripts that drive medical representatives' commission calculations.</li>
+    <li>Ran the quarterly realignment migration scripts that drive commission calculations for <b>3,500 medical representatives</b> (<b>$30K+</b> commission per rep per year).</li>
     <li>Resolved file-upload and data issues, coordinating with ETL and Tableau teams on quick fixes.</li>
   </ul>
   <ul class="chips" aria-label="Technologies used"><li>VB.NET</li><li>SQL Server</li><li>IIS</li><li>Agile</li><li>Scrum</li></ul>
@@ -932,7 +966,7 @@ svg.ic{color:var(--c)}
   </summary>
   <div class="acc-body">
   <ul class="bul">
-    <li>Built front-end and back-end features for a financial web application.</li>
+    <li>Built front-end and back-end features for a financial application used for card processing, handling <b>350M cards a year</b>, and helped cut processing time from <b>15 days to 3</b>.</li>
     <li>Developed REST Web API services and migrated a VB.NET application to ASP.NET MVC.</li>
     <li>Wrote SQL Server stored procedures, views and functions.</li>
   </ul>
@@ -1016,7 +1050,7 @@ svg.ic{color:var(--c)}
     </nav>
     <div>
       <h4>Expertise</h4>
-      <ul><li>.NET Core and C#</li><li>Angular and React</li><li>Azure and AWS</li><li>Microservices and messaging</li><li>Test-driven development</li></ul>
+      <ul><li>.NET Core and C#</li><li>Angular and React</li><li>Azure and AWS</li><li>Microservices and messaging</li><li>Test-driven development</li><li>Aviation, energy, telecom, healthcare and finance</li></ul>
     </div>
     <div>
       <h4>Get in touch</h4>
